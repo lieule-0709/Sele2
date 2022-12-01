@@ -1,12 +1,15 @@
 package com.auto.test.browser;
 
-import com.auto.testng.TestListener;
 import com.logigear.statics.Selaium;
 import com.logigear.utils.Configuration;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 @Listeners(com.auto.testng.TestListener.class)
 public class BrowserTestBase {
