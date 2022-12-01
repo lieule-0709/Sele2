@@ -27,6 +27,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
+
         log.info("Test case \"{} - {}\" is started", result.getMethod().getMethodName(),
                 result.getMethod().getDescription());
     }
@@ -37,6 +38,7 @@ public class TestListener implements ITestListener {
         Properties properties = new Properties();
         properties.putAll(ExecutionContext.getEnvironments());
         FileUtils.savePropertiesToFile(properties, Constants.ENV_ALLURE_FILE);
+
     }
 
     @Override

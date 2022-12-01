@@ -1,5 +1,6 @@
 package com.auto.page;
 
+import com.auto.page.imp.android.ChromeHomePage;
 import com.logigear.statics.Selaium;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -7,6 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.auto.utils.Constants.CHROME;
 
 public class PageFactory {
     private static final Logger logger = LoggerFactory.getLogger(PageFactory.class);
@@ -22,8 +25,8 @@ public class PageFactory {
 
         // Home page implementation
         pages.put(Page.Home, new HashMap<String, Class<?>>() {{
-//            put(IOS, IOSHomePage.class);
-//            put(ANDROID, AndroidHomePage.class);
+            put(CHROME, ChromeHomePage.class);
+//            put(ANDROID, ChromeHomePage.class);
         }});
     }
 
