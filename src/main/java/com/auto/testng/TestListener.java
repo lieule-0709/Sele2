@@ -43,6 +43,7 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         try {
             if (Selaium.driverContainer().isAlive()) {
+                log.info("Taking screenshot...");
                 ByteArrayInputStream input = new ByteArrayInputStream(Selaium.takeScreenShot(OutputType.BYTES));
                 Allure.addAttachment("screenShot", input);
             }
