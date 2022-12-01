@@ -3,16 +3,12 @@ package com.auto.testng;
 import com.auto.utils.Constants;
 import com.auto.utils.ExecutionContext;
 import com.auto.utils.FileUtils;
-import com.logigear.statics.Selaium;
-import io.qameta.allure.Allure;
-import org.openqa.selenium.OutputType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.io.ByteArrayInputStream;
 import java.util.Properties;
 
 
@@ -41,16 +37,6 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        try {
-            if (Selaium.driverContainer().isAlive()) {
-                log.info("Taking screenshot...");
-                ByteArrayInputStream input = new ByteArrayInputStream(Selaium.takeScreenShot(OutputType.BYTES));
-                Allure.addAttachment("screenShot", input);
-            }
-
-        } catch (Exception ex) {
-            log.error("Error occurred", ex);
-        }
     }
 
     @Override
