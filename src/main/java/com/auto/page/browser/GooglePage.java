@@ -10,6 +10,4 @@ public class GooglePage {
     public void search(String keyword) {
         searchTextBox.enter(keyword);
     }
-
-
 }

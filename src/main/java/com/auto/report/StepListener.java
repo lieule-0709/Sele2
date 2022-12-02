@@ -30,7 +30,7 @@ public class StepListener implements StepLifecycleListener {
         if (result.getStatus().equals(Status.FAILED) || result.getStatus().equals(Status.BROKEN) && Selaium.driverContainer().isAlive()) {
             log.info("Taking screenshot...");
             ByteArrayInputStream input = new ByteArrayInputStream(Selaium.takeScreenShot(OutputType.BYTES));
-            Allure.addAttachment("screenShot", input);
+            Allure.addAttachment("ScreenShot when test case failed: ", input);
         }
 
     }
