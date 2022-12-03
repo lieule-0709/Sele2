@@ -3,7 +3,7 @@ package com.auto.test.sanity;
 import com.auto.data.enums.Navigation;
 import com.auto.model.User;
 import com.auto.model.UserModel;
-import com.auto.page.IHomePage;
+import com.auto.page.IGoogleHomePage;
 import com.auto.page.ILoginPage;
 import com.auto.page.PageFactory;
 import com.auto.test.TestBase;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class ItemsTest extends TestBase {
     private UserModel user;
     private ILoginPage loginPage;
-    private IHomePage homePage;
+    private IGoogleHomePage homePage;
 
 
     @Test(description = "Able to create new item")

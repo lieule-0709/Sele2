@@ -1,0 +1,6 @@
+{
+  "platform": "chrome",
+  "headless": true,
+  "startMaximized": true,
+  "baseUrl": "https://www.google.com"
+}

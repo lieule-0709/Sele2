@@ -1,20 +1,15 @@
 package com.auto.test.browser;
 
-import com.auto.page.browser.GooglePage;
-import com.auto.testng.TestListener;
-import com.auto.utils.Assertion;
-import com.google.gson.JsonObject;
-import org.testng.annotations.Listeners;
+import com.auto.page.browser.GoogleHomePage;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class GoogleTests extends BrowserTestBase {
 
-    private GooglePage googlePage = new GooglePage();
+    private GoogleHomePage googleHomePage = new GoogleHomePage();
 
     @Test(testName = "google search test", description = "able to search")
     public void Test_google_search() {
-        googlePage.search("Selenium");
+        googleHomePage.search("Selenium");
 
         assertion.assertTrue(false, "Verify true failed");
         assertion.assertTrue(true, "Verify true passed");

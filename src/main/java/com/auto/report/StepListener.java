@@ -11,28 +11,31 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 
+import static com.auto.utils.DateTimeHelper.currentDateTime;
+
 public class StepListener implements StepLifecycleListener {
 
     private static final Logger log = LoggerFactory.getLogger(StepListener.class);
 
     @Override
     public void beforeStepStart(StepResult result) {
-        log.info("[Step]: " + result.getName() + " is started");
-        // Keep all steps of test case
-//        if (JiraReporter.instance().config().isLogBug()) {
-//            ExecutionContext.setSteps(result.getName());
-//        }
+        log.info("[Step]: " + result.getName() + " is starting");
     }
 
     @Override
     public void beforeStepStop(final StepResult result) {
 
         if (result.getStatus().equals(Status.FAILED) || result.getStatus().equals(Status.BROKEN) && Selaium.driverContainer().isAlive()) {
-            log.info("Taking screenshot...");
+            log.info("[Failed]: Taking screenshot...");
             ByteArrayInputStream input = new ByteArrayInputStream(Selaium.takeScreenShot(OutputType.BYTES));
-            Allure.addAttachment("ScreenShot when test case failed: ", input);
+            Allure.addAttachment(String.format("Screenshot %s:", currentDateTime()), input);
         }
 
+    }
+
+    @Override
+    public void afterStepStop(StepResult result) {
+        log.info("[Step]: " + result.getName() + " ended");
     }
 
 }
