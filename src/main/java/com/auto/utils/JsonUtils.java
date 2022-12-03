@@ -1,6 +1,8 @@
 package com.auto.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.stream.JsonReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
+import java.util.Hashtable;
 import java.util.List;
 
 public class JsonUtils {
@@ -44,4 +47,22 @@ public class JsonUtils {
         }
         throw new RuntimeException("Cannot read json file from " + jsonPath);
     }
+
+    public static Object[][] jsonArrayToObjectArray(JsonArray jsonArray) {
+
+        Object[][] data = new Object[0][1];
+        int index = 0;
+        Gson gson = new Gson();
+
+        if (jsonArray.size() > 0) {
+            data = new Object[jsonArray.size()][1];
+            for (Object obj : jsonArray) {
+                Hashtable<String, Object> hashTable = new Hashtable();
+                data[index][0] = gson.fromJson((JsonElement) obj, hashTable.getClass());
+                index++;
+            }
+        }
+        return data;
+    }
+
 }
