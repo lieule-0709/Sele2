@@ -2,5 +2,20 @@
   "platform": "chrome",
   "headless": true,
   "startMaximized": true,
-  "baseUrl": "https://www.google.com"
+  "baseUrl": "https://www.google.com",
+  "capabilities": {
+    "browserName": "chrome",
+    "seleniumProtocol": "WebDriver",
+    "platform": "WIN",
+    "chromeOptions": {
+      "args": [
+        "--start-maximized",
+        "--disable-extensions",
+        "--disable-infobars",
+        "--disable-notifications",
+        "--no-sandbox",
+        "--disable-gpu"
+      ]
+    }
+  }
 }
