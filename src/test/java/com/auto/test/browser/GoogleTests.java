@@ -1,18 +1,23 @@
 package com.auto.test.browser;
 
-import com.auto.page.browser.GoogleHomePage;
-import org.testng.annotations.DataProvider;
+import com.auto.page.IHomePage;
+import com.auto.page.PageFactory;
+import com.auto.page.browser.chrome.HomePage;
+import com.auto.test.TestBase;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-public class GoogleTests extends BrowserTestBase {
+public class GoogleTests extends TestBase {
 
-    private GoogleHomePage googleHomePage = new GoogleHomePage();
+    private HomePage homePage = new HomePage();
 
-    @Test(dataProvider = "getDataForTest", testName = "google search test", description = "able to search")
-    public void Test_google_search(Hashtable data) {
-        googleHomePage.search("Selenium");
+    @Test(dataProvider = "getDataForTest", testName = "Enter value to search", description = "able to search")
+    public void test_search(Hashtable data) {
+        int a = 1;
+        homePage.open();
+        homePage.search(data.get("keywords"));
 
         assertion.assertTrue(false, "Verify true failed");
         assertion.assertTrue(true, "Verify true passed");
@@ -31,4 +36,26 @@ public class GoogleTests extends BrowserTestBase {
 
         assertion.assertAll();
     }
+
+//    private UserModel user;
+//    private ILoginPage loginPage;
+//
+//
+//    @Test(description = "Able to create new item")
+//    public void C14580() {
+//        // 1. Login to system
+//        loginPage.login(user);
+//
+//        // 2. Open items page
+//    }
+//
+//    @BeforeClass
+//    public void before() {
+//        homePage = PageFactory.getHomePage();
+//    }
+//
+//    @AfterClass
+//    public void after() {
+//        // Do somethings
+//    }
 }

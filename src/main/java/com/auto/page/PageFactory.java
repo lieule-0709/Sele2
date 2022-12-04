@@ -1,6 +1,6 @@
 package com.auto.page;
 
-import com.auto.page.browser.GoogleHomePage;
+import com.auto.page.browser.chrome.HomePage;
 import com.logigear.statics.Selaium;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -25,8 +25,7 @@ public class PageFactory {
 
         // Home page implementation
         pages.put(Page.Home, new HashMap<String, Class<?>>() {{
-            put(CHROME, GoogleHomePage.class);
-//            put(ANDROID, AndroidHomePage.class);
+            put(CHROME, HomePage.class);
         }});
     }
 
@@ -53,7 +52,7 @@ public class PageFactory {
     }
 
 
-    public static IGoogleHomePage getHomePage() {
+    public static IHomePage getHomePage() {
         return get(Page.Home);
     }
 

@@ -2,7 +2,9 @@
   "platform": "chrome",
   "headless": true,
   "startMaximized": true,
-  "baseUrl": "https://www.google.com",
+  "baseUrl": "https://www.digikey.com/",
+  "timeout": "3000",
+  "PollingInterval": "500",
   "capabilities": {
     "browserName": "chrome",
     "seleniumProtocol": "WebDriver",

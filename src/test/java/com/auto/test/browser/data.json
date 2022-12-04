@@ -1,9 +1,7 @@
 {
-  "GoogleTests_Test_google_search": [
+  "GoogleTests_test_search": [
     {
-      "test": {
-        "ahihi": "ffds"
-      }
+      "keywords": "connector"
     }
   ]
 }
