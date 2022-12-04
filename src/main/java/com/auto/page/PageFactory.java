@@ -1,6 +1,7 @@
 package com.auto.page;
 
-import com.auto.page.browser.GoogleHomePage;
+import com.auto.page.browser.chrome.HomePage;
+import com.auto.page.browser.chrome.LoginPage;
 import com.logigear.statics.Selaium;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -19,14 +20,12 @@ public class PageFactory {
 
         // Login page implementation
         pages.put(Page.Login, new HashMap<String, Class<?>>() {{
-//            put(ANDROID, AndroidLoginPage.class);
-//            put(IOS, IOSLoginPage.class);
+            put(CHROME, LoginPage.class);
         }});
 
         // Home page implementation
         pages.put(Page.Home, new HashMap<String, Class<?>>() {{
-            put(CHROME, GoogleHomePage.class);
-//            put(ANDROID, AndroidHomePage.class);
+            put(CHROME, HomePage.class);
         }});
     }
 
@@ -48,12 +47,12 @@ public class PageFactory {
         throw new RuntimeException("Cannot initial page object for " + pageName);
     }
 
+
     public static ILoginPage getLoginPage() {
         return get(Page.Login);
     }
 
-
-    public static IGoogleHomePage getHomePage() {
+    public static IHomePage getHomePage() {
         return get(Page.Home);
     }
 

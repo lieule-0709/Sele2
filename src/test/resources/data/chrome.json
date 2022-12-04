@@ -1,20 +1,22 @@
 {
-    "platform": "chrome",
-    "startMaximized": true,
-    "baseUrl": "https://www.google.com",
-    "capabilities": {
-      "browserName": "chrome",
-      "seleniumProtocol": "WebDriver",
-      "platform": "WIN",
-      "chromeOptions": {
-        "args": [
-          "--start-maximized",
-          "--disable-extensions",
-          "--disable-infobars",
-          "--disable-notifications",
-          "--no-sandbox",
-          "--disable-gpu"
-        ]
-      }
+  "platform": "chrome",
+  "startMaximized": true,
+  "baseUrl": "https://www.foody.vn/",
+  "timeout": "5000",
+  "PollingInterval": "500",
+  "capabilities": {
+    "browserName": "chrome",
+    "seleniumProtocol": "WebDriver",
+    "platform": "WIN",
+    "chromeOptions": {
+      "args": [
+        "--start-maximized",
+        "--disable-extensions",
+        "--disable-infobars",
+        "--disable-notifications",
+        "--no-sandbox",
+        "--disable-gpu"
+      ]
     }
+  }
 }

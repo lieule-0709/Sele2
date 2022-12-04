@@ -18,7 +18,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        log.info("Tests started on {}", context.getCurrentXmlTest().getParameter("platform"));
+        log.info("Tests started on {}", Constants.PLAT_FORM);
     }
 
     @Override

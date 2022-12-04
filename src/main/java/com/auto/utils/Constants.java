@@ -22,6 +22,8 @@ public class Constants {
 
     public static final String PROPERTIES_FILE = "src/test/resources/configuration.properties";
     public static final String AUTO_TEST_FOLDER = "src/test/java/";
+
+    public static final String BASE_URL = "";
     static {
         ConfigFiles.put(ACCOUNT, "src/test/resources/data/accounts.json");
         ConfigFiles.put(CHROME, "src/test/resources/data/chrome.json");
