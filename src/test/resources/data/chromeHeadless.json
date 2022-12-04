@@ -2,8 +2,8 @@
   "platform": "chrome",
   "headless": true,
   "startMaximized": true,
-  "baseUrl": "https://www.digikey.com/",
-  "timeout": "3000",
+  "baseUrl": "https://www.foody.vn/",
+  "timeout": "5000",
   "PollingInterval": "500",
   "capabilities": {
     "browserName": "chrome",

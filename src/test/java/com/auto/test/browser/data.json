@@ -1,7 +1,14 @@
 {
-  "GoogleTests_test_search": [
+  "Search_C01_Search": [
     {
-      "keywords": "connector"
+      "keywords": "Trà sữa"
+    }
+  ],
+  "Login_C02_Login": [
+    {
+      "userName": "lieule070999@gmail.com",
+      "password": "Date.09052018",
+      "profileName": "Liễu"
     }
   ]
 }
